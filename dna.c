@@ -24,6 +24,8 @@
 #include <string.h>
 #include <stdlib.h>
 
+#include "bioinformatics.h"
+
 
 int32_t main(int32_t argc, char *argv[]) {
     if (argc != 2) {
@@ -53,37 +55,11 @@ int32_t main(int32_t argc, char *argv[]) {
         return 1;
     }
 
-    uint32_t base_counts[4] = {0};
-    for (uint32_t i = 0; i < read_len; i++) {
-        switch (line_ptr[i]) {
-            case 'a':
-            case 'A':
-                base_counts[0]++;
-                break;
-            case 'c':
-            case 'C':
-                base_counts[1]++;
-                break;
-            case 'g':
-            case 'G':
-                base_counts[2]++;
-                break;
-            case 't':
-            case 'T':
-                base_counts[3]++;
-                break;
-            case '\r':
-            case '\n':
-                i = read_len;
-                break;
-            default:
-                fprintf(stderr, "Unexpected character: '%c'\n", line_ptr[i]);
-                i = read_len;
-                break;
-        }
-    }
+    char *na_str = strstrip(line_ptr);
 
-    printf("%u %u %u %u\n", base_counts[0], base_counts[1], base_counts[2], base_counts[3]);
+    struct nucleotide_counts nt_counts = count_nucleotides(na_str);
+
+    printf("%u %u %u %u\n", nt_counts.a, nt_counts.c, nt_counts.g, nt_counts.t);
 
     free(line_ptr);
     fclose(inp_fp);

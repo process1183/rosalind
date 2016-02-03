@@ -31,6 +31,8 @@ all: $(ALL_PROGRAMS)
 %.o: %.c %.h
 	$(CC) $(CFLAGS) -c -o $@ $<
 
+$(ALL_PROGRAMS): bioinformatics.o
+
 .PHONY: clean
 clean:
 	$(RM) *.o $(ALL_PROGRAMS)
