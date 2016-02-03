@@ -95,3 +95,23 @@ struct nucleotide_counts count_nucleotides(char *nucleic_acid_str) {
 
     return nt_counts;
 }
+
+
+
+/*
+ * Transcribe DNA string into an RNA string
+ * Transcription is done on a copy (using strdup) of dna_str
+ * Returns a transcibed copy of dna_str
+ */
+char * transcribe_dna_to_rna(char *dna_str) {
+    char *rna_str = strdup(dna_str);
+    uint64_t len = strlen(rna_str);
+
+    for (uint64_t i = 0; i < len; i++) {
+        if (rna_str[i] == 't' || rna_str[i] == 'T') {
+            rna_str[i] += 1;
+        }
+    }
+
+    return rna_str;
+}

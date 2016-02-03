@@ -23,7 +23,8 @@ CFLAGS := -std=gnu99 -Wall -Wextra -pedantic -g $(OPTFLAGS)
 LDLIBS := $(OPTLIBS)
 
 ALL_PROGRAMS := \
-	dna
+	dna \
+	rna
 
 .PHONY: all
 all: $(ALL_PROGRAMS)
