@@ -58,6 +58,32 @@ char *strstrip(char *s)
 
 
 /*
+ * Reverse a string
+ *
+ * Returns a pointer to reversed copy of s
+ * You should free() this pointer when you're done with it.
+ *
+ * Returns NULL if there was a problem allocating memory for the string copy.
+ */
+char *strrev(char *s)
+{
+    uint64_t s_len = strlen(s);
+
+    char *buf = calloc(s_len + 1, 1);
+    if (!buf) {
+        return NULL;
+    }
+
+    for (uint64_t i = 0; i < s_len; i++) {
+        uint64_t s_index = s_len - 1 - i;
+        buf[i] = s[s_index];
+    }
+
+    return buf;
+}
+
+
+/*
  * Count nucleotides in DNA or RNA string nucleic_acid_str
  * Returns a nucleotide_counts struct containing the nucleotide counts from nucleic_acid_str
  */

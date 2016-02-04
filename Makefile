@@ -24,7 +24,8 @@ LDLIBS := $(OPTLIBS)
 
 ALL_PROGRAMS := \
 	dna \
-	rna
+	rna \
+	revc
 
 .PHONY: all
 all: $(ALL_PROGRAMS)

@@ -26,6 +26,8 @@
 
 char *strstrip(char *s);
 
+char *strrev(char *s);
+
 struct nucleotide_counts {
     uint32_t a;
     uint32_t c;
