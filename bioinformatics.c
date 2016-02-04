@@ -21,6 +21,7 @@
 #include <ctype.h>
 #include <stdint.h>
 #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
 
 #include "bioinformatics.h"
@@ -117,4 +118,47 @@ char *transcribe_dna_to_rna(char *dna_str)
     }
 
     return rna_str;
+}
+
+
+/*
+ * Get the complement of a DNA string
+ *
+ * Returns a pointer to the complemented DNA string.
+ * You should free() this pointer when you're done with it.
+ *
+ * Return NULL if an unexpected charater is encountered in the DNA string.
+ *
+ * http://rosalind.info/problems/revc/
+ */
+char *get_dna_complement(char *dna_str)
+{
+    char *complement = strdup(dna_str);
+    uint64_t len = strlen(complement);
+
+    for (uint64_t i = 0; i < len; i++) {
+        switch (complement[i]) {
+            case 'a':
+            case 'A':
+                complement[i] = 'T';
+                break;
+            case 't':
+            case 'T':
+                complement[i] = 'A';
+                break;
+            case 'c':
+            case 'C':
+                complement[i] = 'G';
+                break;
+            case 'g':
+            case 'G':
+                complement[i] = 'C';
+                break;
+            default:
+                free(complement);
+                return NULL;
+        }
+    }
+
+    return complement;
 }

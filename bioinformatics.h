@@ -38,4 +38,6 @@ struct nucleotide_counts count_nucleotides(char *nucleic_acid_str);
 
 char *transcribe_dna_to_rna(char *dna_str);
 
+char *get_dna_complement(char *dna_str);
+
 #endif // _bioinformatics_h
