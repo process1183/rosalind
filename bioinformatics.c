@@ -33,7 +33,8 @@
  * Copied from Linux Kernel
  * https://git.kernel.org/cgit/linux/kernel/git/stable/linux-stable.git/tree/lib/string.c#n446
 */
-char *strstrip(char *s) {
+char *strstrip(char *s)
+{
     uint64_t len = strlen(s);
     if (!len) {
         return s;
@@ -59,7 +60,8 @@ char *strstrip(char *s) {
  * Count nucleotides in DNA or RNA string nucleic_acid_str
  * Returns a nucleotide_counts struct containing the nucleotide counts from nucleic_acid_str
  */
-struct nucleotide_counts count_nucleotides(char *nucleic_acid_str) {
+struct nucleotide_counts count_nucleotides(char *nucleic_acid_str)
+{
     uint32_t na_strlen = strlen(nucleic_acid_str);
 
     struct nucleotide_counts nt_counts = {0};
@@ -103,7 +105,8 @@ struct nucleotide_counts count_nucleotides(char *nucleic_acid_str) {
  * Transcription is done on a copy (using strdup) of dna_str
  * Returns a transcibed copy of dna_str
  */
-char * transcribe_dna_to_rna(char *dna_str) {
+char *transcribe_dna_to_rna(char *dna_str)
+{
     char *rna_str = strdup(dna_str);
     uint64_t len = strlen(rna_str);
 

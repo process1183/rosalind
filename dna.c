@@ -27,7 +27,8 @@
 #include "bioinformatics.h"
 
 
-int32_t main(int32_t argc, char *argv[]) {
+int32_t main(int32_t argc, char *argv[])
+{
     if (argc != 2) {
         fprintf(stderr, "Usage: %s <dataset file>\n", argv[0]);
         return 1;
