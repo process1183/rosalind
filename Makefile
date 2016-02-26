@@ -22,6 +22,8 @@ RM := rm -f
 CFLAGS := -std=gnu99 -Wall -Wextra -pedantic -g $(OPTFLAGS)
 LDLIBS := $(OPTLIBS)
 
+OBJ := bioinformatics.o string_utils.o
+
 ALL_PROGRAMS := \
 	dna \
 	rna \
@@ -33,7 +35,7 @@ all: $(ALL_PROGRAMS)
 %.o: %.c %.h
 	$(CC) $(CFLAGS) -c -o $@ $<
 
-$(ALL_PROGRAMS): bioinformatics.o
+$(ALL_PROGRAMS): $(OBJ)
 
 .PHONY: clean
 clean:

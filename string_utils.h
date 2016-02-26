@@ -1,7 +1,5 @@
 /*
- * rosalind - bioinformatics
- * http://rosalind.info/
- *
+ * string_utils
  * Copyright (C) 2016 Josh Gadeken
  *
  * This program is free software: you can redistribute it and/or modify
@@ -18,24 +16,12 @@
  * along with this program.  If not, see {http://www.gnu.org/licenses/}.
  */
 
-#ifndef _bioinformatics_h
-#define _bioinformatics_h
-
-#include <stdint.h>
+#ifndef _string_utils_h
+#define _string_utils_h
 
 
-struct nucleotide_counts {
-    uint32_t a;
-    uint32_t c;
-    uint32_t g;
-    uint32_t t;
-    uint32_t u;
-};
+char *strstrip(char *s);
 
-struct nucleotide_counts count_nucleotides(char *nucleic_acid_str);
+char *strrev(char *s);
 
-char *transcribe_dna_to_rna(char *dna_str);
-
-char *get_dna_complement(char *dna_str);
-
-#endif // _bioinformatics_h
+#endif // _string_utils_h

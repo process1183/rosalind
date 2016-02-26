@@ -25,6 +25,7 @@
 #include <stdlib.h>
 
 #include "bioinformatics.h"
+#include "string_utils.h"
 
 
 int32_t main(int32_t argc, char *argv[])
