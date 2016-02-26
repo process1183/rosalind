@@ -40,23 +40,23 @@ struct nucleotide_counts count_nucleotides(char *nucleic_acid_str)
         switch (nucleic_acid_str[i]) {
             case 'a':
             case 'A':
-                nt_counts.a++;
+                nt_counts.A++;
                 break;
             case 'c':
             case 'C':
-                nt_counts.c++;
+                nt_counts.C++;
                 break;
             case 'g':
             case 'G':
-                nt_counts.g++;
+                nt_counts.G++;
                 break;
             case 't':
             case 'T':
-                nt_counts.t++;
+                nt_counts.T++;
                 break;
             case 'u':
             case 'U':
-                nt_counts.u++;
+                nt_counts.U++;
                 break;
             default:
                 fprintf(stderr, "count_nucleotides(): Unexpected character: '%c'\n", nucleic_acid_str[i]);

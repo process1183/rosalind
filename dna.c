@@ -61,7 +61,7 @@ int32_t main(int32_t argc, char *argv[])
 
     struct nucleotide_counts nt_counts = count_nucleotides(na_str);
 
-    printf("%u %u %u %u\n", nt_counts.a, nt_counts.c, nt_counts.g, nt_counts.t);
+    printf("%lu %lu %lu %lu\n", nt_counts.A, nt_counts.C, nt_counts.G, nt_counts.T);
 
     free(line_ptr);
     fclose(inp_fp);

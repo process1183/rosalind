@@ -25,11 +25,11 @@
 
 
 struct nucleotide_counts {
-    uint32_t a;
-    uint32_t c;
-    uint32_t g;
-    uint32_t t;
-    uint32_t u;
+    uint64_t A;
+    uint64_t C;
+    uint64_t G;
+    uint64_t T;
+    uint64_t U;
 };
 
 struct nucleotide_counts count_nucleotides(char *nucleic_acid_str);
