@@ -1,4 +1,4 @@
-/*
+/**
  * string_utils
  * Copyright (C) 2016 Josh Gadeken
  *
@@ -24,13 +24,7 @@
 #include "string_utils.h"
 
 
-/*
- * Remove leading and trailing whitespace from string s
- * Returns a pointer to the first non-whitespace charater in s
- *
- * Copied from Linux Kernel
- * https://git.kernel.org/cgit/linux/kernel/git/stable/linux-stable.git/tree/lib/string.c#n446
-*/
+/* Mostly copied from lib/string.c in the Linux Kernel */
 char *strstrip(char *s)
 {
     uint64_t len = strlen(s);
@@ -54,14 +48,6 @@ char *strstrip(char *s)
 }
 
 
-/*
- * Reverse a string
- *
- * Returns a pointer to reversed copy of s
- * You should free() this pointer when you're done with it.
- *
- * Returns NULL if there was a problem allocating memory for the string copy.
- */
 char *strrev(char *s)
 {
     uint64_t s_len = strlen(s);

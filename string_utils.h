@@ -1,4 +1,4 @@
-/*
+/**
  * string_utils
  * Copyright (C) 2016 Josh Gadeken
  *
@@ -20,8 +20,23 @@
 #define _string_utils_h
 
 
+/**
+ * strstrip - Remove leading and trailing whitespace from s.
+ *
+ * Returns a pointer to the first non-whitespace charater in s
+ */
 char *strstrip(char *s);
 
+
+/**
+ * strrev - Reverse a string
+ *
+ * Returns a pointer to reversed copy of s
+ * You should free() this pointer when you're done with it.
+ *
+ * Returns NULL if there was a problem allocating memory
+ * for the string copy.
+ */
 char *strrev(char *s);
 
-#endif // _string_utils_h
+#endif /* _string_utils_h */

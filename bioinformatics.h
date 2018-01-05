@@ -1,4 +1,4 @@
-/*
+/**
  * rosalind - bioinformatics
  * http://rosalind.info/
  *
@@ -32,10 +32,36 @@ struct nucleotide_counts {
     uint64_t U;
 };
 
+
+/**
+ * Count nucleotides in DNA or RNA string, s
+ *
+ * Returns a nucleotide_counts struct containing the nucleotide
+ * counts from nucleic_acid_str
+ */
 struct nucleotide_counts count_nucleotides(char *nucleic_acid_str);
 
+
+/**
+ * Transcribe DNA string into an RNA string
+ *
+ * Transcription is done on a copy (using strdup) of dna_str
+ *
+ * Returns a transcibed copy of dna_str
+ */
 char *transcribe_dna_to_rna(char *dna_str);
 
+
+/**
+ * Get the complement of a DNA string
+ *
+ * Returns a pointer to the complemented DNA string.
+ * You should free() this pointer when you're done with it.
+ *
+ * Return NULL if an unexpected charater is encountered in the DNA string.
+ *
+ * http://rosalind.info/problems/revc/
+ */
 char *get_dna_complement(char *dna_str);
 
-#endif // _bioinformatics_h
+#endif /* _bioinformatics_h */
