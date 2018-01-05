@@ -111,3 +111,23 @@ char *get_dna_complement(char *dna_str)
 
     return complement;
 }
+
+
+int64_t hamming_distance(char *s, char *t)
+{
+    size_t slen = strlen(s);
+    size_t tlen = strlen(t);
+
+    if (slen != tlen) {
+        return (-1);
+    }
+
+    int64_t hd = 0;
+    for (size_t i = 0; i < slen; i++) {
+        if (s[i] != t[i]) {
+            hd++;
+        }
+    }
+
+    return hd;
+}

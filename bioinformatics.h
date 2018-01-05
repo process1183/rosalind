@@ -64,4 +64,17 @@ char *transcribe_dna_to_rna(char *dna_str);
  */
 char *get_dna_complement(char *dna_str);
 
+
+/**
+ * Calculate Hamming distance between two DNA strings, s and t.
+ *
+ * Returns Hamming distance, or (-1) if s and t are not
+ * the same length.
+ *
+ * http://rosalind.info/problems/hamm/
+ * http://rosalind.info/glossary/hamming-distance/
+ * https://en.wikipedia.org/wiki/Hamming_distance/
+ */
+int64_t hamming_distance(char *s, char *t);
+
 #endif /* _bioinformatics_h */
