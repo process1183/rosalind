@@ -27,7 +27,7 @@
 /* Mostly copied from lib/string.c in the Linux Kernel */
 char *strstrip(char *s)
 {
-    uint64_t len = strlen(s);
+    size_t len = strlen(s);
     if (!len) {
         return s;
     }
@@ -50,14 +50,14 @@ char *strstrip(char *s)
 
 char *strrev(char *s)
 {
-    uint64_t s_len = strlen(s);
+    size_t s_len = strlen(s);
 
     char *buf = calloc(s_len + 1, 1);
     if (!buf) {
         return NULL;
     }
 
-    for (uint64_t i = 0; i < s_len; i++) {
+    for (size_t i = 0; i < s_len; i++) {
         uint64_t s_index = s_len - 1 - i;
         buf[i] = s[s_index];
     }

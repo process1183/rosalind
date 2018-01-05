@@ -28,11 +28,11 @@
 
 struct nucleotide_counts count_nucleotides(char *nucleic_acid_str)
 {
-    uint32_t na_strlen = strlen(nucleic_acid_str);
+    size_t na_strlen = strlen(nucleic_acid_str);
 
     struct nucleotide_counts nt_counts = {0};
 
-    for (uint32_t i = 0; i < na_strlen; i++) {
+    for (size_t i = 0; i < na_strlen; i++) {
         switch (nucleic_acid_str[i]) {
             case 'a':
             case 'A':
@@ -68,9 +68,9 @@ struct nucleotide_counts count_nucleotides(char *nucleic_acid_str)
 char *transcribe_dna_to_rna(char *dna_str)
 {
     char *rna_str = strdup(dna_str);
-    uint64_t len = strlen(rna_str);
+    size_t len = strlen(rna_str);
 
-    for (uint64_t i = 0; i < len; i++) {
+    for (size_t i = 0; i < len; i++) {
         if (rna_str[i] == 't' || rna_str[i] == 'T') {
             rna_str[i] += 1;
         }
@@ -83,9 +83,9 @@ char *transcribe_dna_to_rna(char *dna_str)
 char *get_dna_complement(char *dna_str)
 {
     char *complement = strdup(dna_str);
-    uint64_t len = strlen(complement);
+    size_t len = strlen(complement);
 
-    for (uint64_t i = 0; i < len; i++) {
+    for (size_t i = 0; i < len; i++) {
         switch (complement[i]) {
             case 'a':
             case 'A':
